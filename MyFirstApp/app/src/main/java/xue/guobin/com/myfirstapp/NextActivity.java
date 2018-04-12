@@ -8,14 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.LinearLayout;
-//import android.widget.TextView;
 
 public class NextActivity extends AppCompatActivity {
 
-//    private TextView label;
-//    private Button returnButton;
     private Button button1,button2,button3,button4,button5,button6;
     private LinearLayout re;
 
@@ -23,37 +19,9 @@ public class NextActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_next);
-
-//        returnButton = new Button(getApplicationContext());
-//        returnButton.setText("return");
-//        returnButton.setBackgroundColor(Color.RED);
-//        returnButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
-//
-//        re = new RelativeLayout(getApplicationContext());
-//
-//        RelativeLayout.LayoutParams layte = new RelativeLayout.LayoutParams(
-//                RelativeLayout.LayoutParams.WRAP_CONTENT,
-//                RelativeLayout.LayoutParams.WRAP_CONTENT
-//        );
-//        layte.addRule(RelativeLayout.CENTER_IN_PARENT);
-//        re.addView(returnButton, layte);
-//
-//        setContentView(re);
-
-//        Intent intent = getIntent();
-//        String data = intent.getStringExtra("data");
-
-
-//        label = (TextView) findViewById(R.id.label);
-//        label.setText(data);
 
         re = new LinearLayout(getApplicationContext());
+        re.setOrientation(LinearLayout.VERTICAL);
         setContentView(re);
 
         LinearLayout topLayout = new LinearLayout(getApplicationContext());
@@ -62,25 +30,25 @@ public class NextActivity extends AppCompatActivity {
         topLayout.setOrientation(LinearLayout.HORIZONTAL);
         botLayout.setOrientation(LinearLayout.VERTICAL);
 
-//        topLayout.LayoutParams = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.MATCH_PARENT
-//        );
-//        botLayout.LayoutParams = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.MATCH_PARENT
-//        );
-
-
-        re.addView(topLayout);
-        re.addView(botLayout);
+        LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+        );
+        LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+        );
+        params1.weight = 1;
+        params2.weight = 1;
+        re.addView(topLayout,params1);
+        re.addView(botLayout,params2);
 
         button1 = getButton("#FF0000");
         button2 = getButton("#00FF00");
         button3 = getButton("#0000FF");
-        button4 = getButton("#FF0000");
-        button5 = getButton("#00FF00");
-        button6 = getButton("#0000FF");
+        button4 = getButton("#66FF0000");
+        button5 = getButton("#6600FF00");
+        button6 = getButton("#660000FF");
 
         setLayoutParans(topLayout,button1);
         setLayoutParans(topLayout,button2);
@@ -94,9 +62,6 @@ public class NextActivity extends AppCompatActivity {
     }
 
     private void setLayoutParans(LinearLayout layout,Button button) {
-
-
-
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT

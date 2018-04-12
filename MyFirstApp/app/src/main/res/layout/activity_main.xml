@@ -13,4 +13,25 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="next" />
+
+    <Button
+        android:id="@+id/barButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nextButton"
+        android:layout_alignStart="@+id/nextButton"
+        android:layout_below="@+id/nextButton"
+        android:text="tabbar" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nextButton"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+
 </RelativeLayout>
